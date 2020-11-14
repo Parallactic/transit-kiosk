@@ -22,22 +22,22 @@ $(document).ready(function() {
         });
 
         //$.getJSON("divvy.py", function(json) {
-        $.getJSON("divvy.py?address=" + address, function(json) {
+          $.getJSON("/divvy.py?address=" + address, function(json) {
 
-              bikes = json
+                bikes = json
 
-              div = $("#divvy-undocked-bikes")
-              div.empty()
-              div.html("<table>");
-              div.append('<tr><th>Minutes</th><th>Meters</th><th>Blocks</th><th>Approx Address</th></tr>');
+                div = $("#divvy-undocked-bikes")
+                div.empty()
+                div.html("<table>");
+                div.append('<tr><th>Minutes</th><th>Meters</th><th>Blocks</th><th>Approx Address</th></tr>');
 
-              for(i=0; i < bikes.length; i++) {
-                bike = bikes[i];
-                partial_address = bike.address.split(",")[0];
-                div.append('<tr><td>' + parseInt(bike['minutes']) + '</td><td>' + parseInt(bike['meters']) + '</td><td>' + bike['distance_blocks'] + '</td><td>' + partial_address + '</td></tr>');
-              }
-              div.append('</table>');
-        });
+                for(i=0; i < bikes.length; i++) {
+                  bike = bikes[i];
+                  partial_address = bike.address.split(",")[0];
+                  div.append('<tr><td>' + parseInt(bike['minutes']) + '</td><td>' + parseInt(bike['meters']) + '</td><td>' + bike['distance_blocks'] + '</td><td>' + partial_address + '</td></tr>');
+                }
+                div.append('</table>');
+          });
    }
 
    loadData(); // This will run on page load
@@ -52,7 +52,7 @@ $(document).ready(function() {
      var s = today.getSeconds();
      if (h == 0) {hs = "12"; as = "a.m.";}
      if (h > 0 && h < 12) {hs = h; as = "a.m.";}
-     if (h == 12) {as = "p.m.";}
+     if (h == 12) {hs = "12"; as = "p.m.";}
      if (h > 12) {hs = h - 12; as = "p.m.";}
      m = (m < 10 ? "0" + m : m)
      s = (s < 10 ? "0" + s : s)

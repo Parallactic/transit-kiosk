@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta name="description" content="Nearest Divvy Stations + Undocked Bikes">
+    <meta name="author" content="Parallactic Consulting, LLC">
+    <meta charset="utf-8"/>
+
+    <title>Divvy Stations</title>
+
+	  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	  <script src="/divvy-landing.js"></script>
+
+	     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/main.css">
+
+
+</head>
+<body>
+
+<div id="main">
+<form action="kiosk.html">
+  <label for="address">Where is the kiosk located</label>
+  <input name="address" id="address" type="text"></input><br/>
+  <label for="num_stations">
+  Number of nearby Divvy stations to show:
+  </label>
+  <select name="num_stations" id="num_stations">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3" selected>3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+  <br/>
+  <label for="num_bikes">
+  Number of nearby undocked E-bikes to show:
+  </label>
+  <select name="num_bikes" id="num_bikes">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4" selected>4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+  <br/>
+  <label for="facing_direction">
+  What direction are you facing when looking at the kiosk?
+  </label>
+  <select name="facing_direction" id="facing_direction">
+    <option value="0" selected>North</option>
+    <option value="45">Northeast</option>
+    <option value="90">East</option>
+    <option value="135">Southeast</option>
+    <option value="180">South</option>
+    <option value="225">Southwest</option>
+    <option value="270">West</option>
+    <option value="315">Northwest</option>
+  </select>
+  <br/>
+  <input type="submit" value="Launch Kiosk"></input>
+  </form>
+</div>
+</body>
+</html>
