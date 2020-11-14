@@ -35,15 +35,15 @@ def dist_in_blocks(meters): #return distance in chicago city blocks, 200 meters 
   # 3.5+ blocks
   return "4+"
 
-def google_minutes(lat1, lon1, lat2, lon2): # return walking distance in minutes and meters
+def google_distance(lat1, lon1, lat2, lon2): # return walking distance in seconds and meters
   google_key = config.get('Google', 'google_maps_api_key')
   latlon1 = str(lat1) + "," + str(lon1)
   latlon2 = str(lat2) + "," + str(lon2)
   url = config.get('Google', 'google_maps_directions_url') + '?mode=walking&origin=' + latlon1 + '&destination=' + latlon2 + '&key=' + google_key
   resp = requests.get(url)
-  minutes = json.loads(resp.content)['routes'][0]['legs'][0]['duration']['value'] / 60 # minutes
+  seconds = json.loads(resp.content)['routes'][0]['legs'][0]['duration']['value'] # seconds
   meters = json.loads(resp.content)['routes'][0]['legs'][0]['distance']['value'] # always meters
-  return minutes, meters
+  return seconds, meters
 
 def google_address(lat, lon): # return a human readable address
   google_key = config.get('Google', 'google_maps_api_key')
@@ -70,16 +70,19 @@ def get_nearby_ebikes(lat, lon, num): #return the nearest [num] ebikes near lat,
 
     bikes = [bike for bike in bikes if not (bike['is_reserved'] == 1 or bike['is_disabled'] == 1)]  #filter bikes that aren't available
 
-    near_bikes = sorted(bikes, key=lambda x: x['distance']) # sort by distance
+    near_bikes = sorted(bikes, key=lambda x: x['distance']) # sort by great circle distance
 
-    near_bikes = near_bikes[:num] # return only the nearest [num] bikes
+    # now we will pick the 2*num closest bikes (by great circle method), find the walking time to each, sort by walking time, then cut the list down to the number of bikes requested
+
+    near_bikes = near_bikes[:(num*2)] # return only the nearest [num*2] bikes
 
     for bike in near_bikes: # only hit geocode API for bikes that are reasonably close
       bike['address'] = google_address(bike['lat'], bike['lon']) # give it a human readable address
-      bike['minutes'], bike['meters'] = google_minutes(lat, lon, bike['lat'], bike['lon']) # minutes walking
+      bike['seconds'], bike['meters'] = google_distance (lat, lon, bike['lat'], bike['lon']) # seconds walking
       bike['distance_blocks'] = dist_in_blocks(bike['meters'])
 
-    near_bikes = sorted(near_bikes, key=lambda x: x['minutes']) # sort by walking time
+    near_bikes = sorted(near_bikes, key=lambda x: x['seconds']) # sort by walking time
+    near_bikes = near_bikes[:num] # cut the list down to the requested number
 
     return near_bikes
 
@@ -88,9 +91,14 @@ def main():
     print("Content-Type: text/plain;charset=utf-8")
     print('')
 
-    num = 5
-
     arguments = cgi.FieldStorage()
+
+    try:
+      num_bikes = int(arguments['num_bikes'].value)
+    except:
+      num_bikes = 4
+    if num_bikes > 8: # ignore super high cgi param to avoid spamming google api 
+      num_bikes = 8
 
     try:
       address = arguments['address'].value
@@ -105,7 +113,7 @@ def main():
       lat = 41.7950533
       lon = -87.5851167
     
-    near_bikes = get_nearby_ebikes(lat, lon, num)
+    near_bikes = get_nearby_ebikes(lat, lon, num_bikes)
 
     print json.dumps(near_bikes)
 
