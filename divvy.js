@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    const input = document.getElementById("address");
+    const autocomplete = new google.maps.places.Autocomplete(input);
+
 		function loadData(){
 
     var url_string = window.location.href
