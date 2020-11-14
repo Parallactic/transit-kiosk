@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta name="description" content="Upcoming bus and train departures.">
+    <meta name="author" content="Parallactic Consulting, LLC">
+    <meta charset="utf-8"/>
+
+    <title>Transit Departures Board</title>
+
+	  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	  <script src="/main.js"></script>
+
+	     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/main.css">
+
+
+</head>
+<body>
+
+<div id="main">
+	<!--<div style="text-align:center;padding:1em 0;"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=America%2FChicago" width="100%" height="115" frameborder="0" seamless></iframe> </div>-->
+<div class="half left">
+	<div class="header"><div class="where left"><i class="fa fa-3x fa-arrow-circle-o-left"></i><br/>2 min</div><div class="stop-name">55th &amp; Lake Park</div><div class="clear"></div></div>
+	<div class="direction-name arrival">▲ Northbound ▲</div>
+  <div class="stop" id="stop-7132">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">▼ Southbound ▼</div>
+  <div class="stop" id="stop-7179">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="half" style="position: fixed; bottom: 0; left: 18px;">
+	<div class="stop-name" style="margin-top: 500px;">U of C Shuttles</div>
+	<div class="arrival"><div class="where left small"><i class="fa fa-2x fa-arrow-circle-o-left"></i><br/>0 min</div><div class="direction-name large">55th &amp; Cornell<div class="clear"></div></div></div>
+  <div class="stop" id="stop-8062400a">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="arrival"><div class="where left small"><i class="fa fa-2x fa-arrow-circle-o-left"></i><br/>2 min</div><div class="direction-name large">55th &amp; Lake Park<div class="clear"></div></div></div>
+  <div class="stop" id="stop-8062516">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="half right">
+	<div class="header"><div class="where right"><i class="fa fa-3x fa-arrow-circle-o-right"></i><br/>1 min</div><div class="stop-name">55th &amp; Hyde Park</div><div class="clear"></div></div>
+	<div class="direction-name arrival">▲ Northbound ▲</div>
+  <div class="stop" id="stop-1518">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">◄ Westbound ◄</div>
+  <div class="stop" id="stop-10566">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">▼ Southbound ▼</div>
+  <div class="stop" id="stop-1654">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="half" style="position: fixed; bottom: 450px; right: 18px;">
+	<div class="header"><div class="where left"><i class="fa fa-3x fa-arrow-circle-o-down"></i><br/>5 min</div><div class="stop-name">56th &amp; Lake Park Divvy</div><div class="clear"></div></div>
+  <div class="divvy-station" id="divvy-station-345">
+  Loading...</div>
+</div>
+<div class="half" style="position: fixed; bottom: 150px; right: 18px;">
+	<div class="header"><div class="where left" style="margin-right: 90px;"><i class="fa fa-3x fa-arrow-circle-o-right"></i><br/>4 min</div><div class="stop-name">55th &amp; South Shore Divvy</div><div class="clear"></div></div>
+  <div class="divvy-station" id="divvy-station-247">
+  Loading...</div>
+</div>
+<div id="clock" class="half" style="position: fixed; bottom: 0; right: 18px;">
+  Loading...
+</div>
+</div>
+</div>
+</body>
+</html>

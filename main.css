@@ -1,0 +1,52 @@
+* {cursor: none;}
+html, body {height: 100%;}
+
+body {background-color: #000; color: #eee; font-family: sans-serif; font-weight: bold; font-size: 140%; overflow: hidden; position: relative;}
+div#main {}
+
+div.left{float: left; margin-left: 10px;}
+div.right{float: right; margin-right: 10px;}
+
+div.third {float: left; width: 33%; display: inline;}
+div.half {width: 47%; display: inline;}
+
+div.header {vertical-align: middle;}
+
+
+div.arrival {margin: 6px; margin-left: 10px; margin-right: 10px; background-color: #101010;}
+div.arrival div {color: #eee;}
+/*div.cta {color: #0a79c3;}
+div.uchicago {color: #800000; }
+div.metra {color: #ff6f2a; }
+div.ssl {color: #7f2620; }*/
+
+div.arrival div.route {background-color: #0a79c3; color: #fff; padding: 10px; height: 100%; width: 50px; margin-right: 10px; text-align: center; float: left; font-size: 190%;}
+div.cta div.route {background-color: #0a79c3;}
+div.uchicago div.route {background-color: #800000;}
+div.metra div.route {background-color: #ff6f2a;}
+div.ssl div.route {background-color: #7f2620;}
+
+div.arrival div.dest { float: left; padding: 9px; font-size: 110%; padding-top: 12px;}
+
+div.arrival div.dest.long { font-size: 105%; padding-top: 10px;}
+div.arrival div.route { font-size: 110%; padding-top: 15px; padding-bottom: 10px;}
+div.arrival div.route.long { font-size: 80%; padding-top: 15px; padding-bottom: 10px;}
+div.arrival div.rlong { font-size: 75%; padding-top: 15px; padding-bottom: 15px;}
+div.arrival div.time { float: right; padding: 10px; font-size: 140%; color: #bbb;}
+
+/*.odd {background-color: #ddd;}
+.even {background-color: #999;}*/
+.stop-name {background-color: #000; text-align: center; font-size: 200%; padding-top: 20px;}
+div.large {font-size: 140%; padding-top: 20px;}
+div.direction-name {padding: 10px; background-color: #444; text-align: center; color: #eee; font-size: 120%;}
+div.direction-name.large {padding-bottom: 18px; background-color: #444; text-align: center; color: #eee; font-size: 150%; padding-top: 18px;}
+.clear::after {content: ""; display: table; clear: both;}
+.where {display: inline; font-size: 130%; text-align: center;}
+.where.small { font-size: 90%; margin-top: 10px; position: absolute; left: 10px;}
+.stopbox {position: relative;}
+
+div.divvy-status { float: left; text-align: center; display: block; margin-left: 18px; width: 30%;}
+div.divvy-header { background-color: #444; font-size: 120%; padding: 10px;}
+div.divvy-data { font-size: 200%; background-color: #101010; padding-bottom: 15px; padding-top: 15px;}
+
+#clock {text-align: center; font-size: 350%; margin-bottom: 18px;}

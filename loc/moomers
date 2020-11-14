@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta name="description" content="
+    Upcoming bus and train departures.
+">
+    <meta name="author" content="Parallactic Consulting, LLC">
+    <meta charset="utf-8"/>
+
+    <title>Transit Departures Board</title>
+
+	  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	  <script src="/main.js"></script>
+
+<link rel="stylesheet" href="/main.css">
+
+
+</head>
+<body>
+
+<div id="main">
+	<!--<div style="text-align:center;padding:1em 0;"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=America%2FChicago" width="100%" height="115" frameborder="0" seamless></iframe> </div>-->
+<div class="third">
+	<div class="stop-name arrival">55th &amp; Hyde Park</div>
+	<div class="direction-name arrival">⮝ Northbound ⮝</div>
+  <div class="stop" id="stop-1518">
+    <div class="arrival">Loading...</div>
+  </div>
+
+	<div class="direction-name arrival">⮜ Westbound ⮜</div>
+  <div class="stop" id="stop-10566">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">⮟ Southbound ⮟</div>
+  <div class="stop" id="stop-1654">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="third">
+	<div class="stop-name arrival"> Metra 55th St.</div>
+	<div class="direction-name arrival">⮝ Northbound ⮝</div>
+  <div class="stop" id="stop-0000">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">⮟ Southbound ⮟</div>
+  <div class="stop" id="stop-0001">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="stop-name arrival"> Metra 53rd St.</div>
+	<div class="direction-name arrival">⮝ Northbound ⮝</div>
+  <div class="stop" id="stop-0000">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">⮟ Southbound ⮟</div>
+  <div class="stop" id="stop-0001">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="third">
+	<div class="stop-name arrival">Get to Campus</div>
+	<div class="direction-name arrival">Shoreland</div>
+  <div class="stop" id="stop-15919">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">Litehouse Grill</div>
+  <div class="stop" id="stop-10566a">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">Howard Brown</div>
+  <div class="stop" id="stop-8062516">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">Harper Court</div>
+  <div class="stop" id="stop-8062476">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">Mayfair</div>
+  <div class="stop" id="stop-8204754">
+    <div class="arrival">Loading...</div>
+  </div>
+	<div class="direction-name arrival">Cornell Dollar</div>
+  <div class="stop" id="stop-8062400a">
+    <div class="arrival">Loading...</div>
+  </div>
+</div>
+<div class="third">
+	<div class="stop-name arrival">55th &amp; Shore Divvy</div>
+  <div class="divvy-station" id="divvy-station-247">
+  Loading...</div>
+</div>
+<div class="third">
+	<div class="stop-name arrival">56th &amp; Lake Park Divvy</div>
+  <div class="divvy-station" id="divvy-station-345">
+  Loading...</div>
+</div>
+<div class="third">
+	<div class="stop-name arrival">53rd &amp; Lake Park Divvy</div>
+  <div class="divvy-station" id="divvy-station-419">
+  Loading...</div>
+</div>
+</div>
+</body>
+</html>

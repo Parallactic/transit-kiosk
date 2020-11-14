@@ -1,0 +1,16 @@
+# put in your API keys and rename this file config.cfg
+
+[Google]
+google_maps_api_key = [INSERT YOUR GOOGLE API KEY HERE]
+google_maps_directions_url = https://maps.googleapis.com/maps/api/directions/json
+google_maps_geocode_url = https://maps.googleapis.com/maps/api/geocode/json
+
+[Bikeshare]
+divvy_free_bikes_url = https://gbfs.divvybikes.com/gbfs/en/free_bike_status.json
+
+[Transit]
+cta_bus_tracker_url = http://www.ctabustracker.com/bustime/eta/getStopPredictionsETA.jsp
+uchicago_bus_tracker_url = https://uchicago.transloc.com/t/stops/
+metra_tracker_url = https://gtfsapi.metrarail.com/gtfs/tripUpdates
+metra_auth1 = [INSERT YOUR METRA AUTH TOKEN 1 HERE]
+metra_auth2 = [INSERT YOUR METRA AUTH TOKEN 2 HERE]

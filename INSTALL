@@ -1,0 +1,23 @@
+Rename config.cfg.TEMPLATE to config.cfg and edit file to put in your API keys
+
+------
+
+Installation instructions for making a kiosk on an Ubuntu machine:
+
+Brightness & Lock -> no dim screen, turn of screen never, lock off, no require password
+
+Power -> don't suspend
+
+User accounts -> auto login
+
+Software & Updates -> Updates tab -> Automatically check Never
+
+Startup Applications -> chromium-browser --password-store=basic --kiosk --disable-infobars --app=http://transit.parallactic.com/op
+
+/etc/default/grub: GRUB_RECORDFAIL_TIMEOUT=5
+
+/etc/default/rcS: FSCKFIX=yes
+
+sudo update-grub
+
+add to cron /sbin/reboot nightly at convenient time
